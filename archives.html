@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Browse our archives to explore past events, activities, and resources from the Sunday School Family community.">
+  <title>Archives | Sunday School Family</title>
+
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="script.js" defer></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a href="./index.html">
+        <img class='logo' src="./images/logos/white-withStraightText-final.png" alt="Sunday School Family logo">
+      </a>
+    </div>
+
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./executives.html">Executives</a></li>
+      <li><a href="./families.html">Families</a></li>
+      <li><a href="./events.html">Events</a></li>
+      <li><a href="./archives.html"><b>Archives</b></a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+
+    <button type="button" aria-label="Open menu">
+      <img class="icon-hamburger" src="./images/icons/icon-hamburger.svg" alt="">
+    </button>
+  </nav>
+  <header class="page-header header-archives">
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-top">
+        <a href="./index.html">
+          <img class='logo' src="./images/logos/white-withStraightText-final.png" alt="Sunday School Family logo">
+        </a>
+
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">
+          <img class="icon-close" src="./images/icons/icon-close.svg" alt="">
+        </button>
+      </div>
+
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./executives.html">Executives</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./events.html">Events</a></li>
+        <li><a href="./archives.html"><b>Archives</b></a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <p class="breadcrumb">Home/<span>Archives</span></p>
+    <h1>The Archives</h1>
+    <p>To every thing there is a season, and a time to every purpose under the heaven.<br><span>Ecclesiastes 3:1</span>
+    </p>
+    <div class="arrow-down">
+      <img class="icon-arrow-down" src="./images/icons/icon-arrow-down.svg" alt="">
+    </div>
+  </header>
+
+  <main>
+    <section class="page-section page-section--white">
+      <div class="section-header" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+        <h2>Review Past Sunday School Outlines</h2>
+        <p>"When you read, you skim the surface; when you study, you discover the treasure." </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card--outline">
+          <h4>A Herdsman Called Of God To Be A Prophet</h4>
+          <p>28/06/2026</p>
+          <a class="btn--pill" href="outlines/Sunday School Outline (June 28th, 2026).docx" download>Download</a>
+        </div>
+        <div class="card card--outline">
+          <h4>A Noble Friendship</h4>
+          <p>21/06/2026</p>
+          <a class="btn--pill" href="outlines/Sunday School Outline (June 21st, 2026).docx" download>Download</a>
+        </div>
+        <div class="card card--outline">
+          <h4>Hannah, The Faithful Supplicant</h4>
+          <p>14/06/2026</p>
+          <a class="btn--pill" href="outlines/Sunday School Outline (June 14th, 2026 ).docx" download>Download</a>
+        </div>
+        <div class="card card--outline">
+          <h4>Deborah, The Dutiful Judge</h4>
+          <p>07/06/2026</p>
+          <a class="btn--pill" href="outlines/Sunday School Outline (June 7th, 2026).docx" download>Download</a>
+        </div>
+        <div class="card card--outline">
+          <h4>Christian Rythms Of Life</h4>
+          <p>24/05/2026</p>
+          <a class="btn--pill" href="outlines/Sunday School Outline (24th May, 2026).docx" download>Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--cream">
+      <div class="section-header" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+        <h2>Explore Past Sessions</h2>
+        <p>Preserving two generations of Sunday School Family history</p>
+      </div>
+
+      <div class="card-grid">
+        <button type="button" class="card card--feature" onclick="openExecSlideshow('2526')">
+          <img src="./images/themes/25-26.jpeg" alt="2025/26 theme">
+          <div class="card-body">
+            <h4>2025/26 Session</h4>
+          </div>
+        </button>
+        <button type="button" class="card card--feature" onclick="openExecSlideshow('2425')">
+          <img src="./images/themes/24-25.jpg" alt="2024/25 theme">
+          <div class="card-body">
+            <h4>2024/25 Session</h4>
+          </div>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="./index.html">
+        <img class='logo' src="./images/logos/white-withStraightText-final.png" alt="Sunday School Family logo">
+      </a>
+      <p>Bowen University Baptist Student Fellowship</p>
+      <a href="https://www.instagram.com/bu_sundayschool/" target="_blank" rel="noopener noreferrer"><img
+          class='instagram' src="./images/icons/icon-instagram.svg" alt="Sunday School Family logo"></a>
+    </div>
+
+    <ul>
+      <li class="footer-heading">Explore</li>
+      <li><a href="./executives.html">Executives</a></li>
+      <li><a href="./families.html">Families</a></li>
+      <li><a href="./events.html">Events</a></li>
+      <li><a href="./archives.html">Archives</a></li>
+    </ul>
+
+    <ul>
+      <li class="footer-heading">Get in touch</li>
+      <li><a href="./contact.html">Contact us</a></li>
+      <li><a href="#">busundayschool@gmail.com</a></li>
+    </ul>
+
+    <ul>
+      <li class="footer-heading">Address</li>
+      <li>Bowen University</li>
+      <li>Iwo, Osun State</li>
+      <li>Nigeria</li>
+    </ul>
+
+    <p>© 2026 BBSF Sunday School Family Bowen University. All rights reserved.</p>
+  </footer>
+
+  <div class="exec-slideshow" id="exec-slideshow">
+    <button type="button" class="exec-slideshow-close" aria-label="Close slideshow">
+      <img src="./images/icons/icon-close.svg" alt="">
+    </button>
+
+    <button type="button" class="exec-slideshow-prev" aria-label="Previous">
+      <img src="./images/icons/icon-arrow-right.svg" alt="" style="transform: rotate(180deg);">
+    </button>
+
+    <div class="exec-slideshow-track">
+      <div class="exec-slide">
+        <img id="exec-img-1" src="" alt="">
+        <p class="exec-role" id="exec-role-1"></p>
+        <h3 class="exec-name" id="exec-name-1"></h3>
+      </div>
+      <div class="exec-slide" id="exec-slide-2">
+        <img id="exec-img-2" src="" alt="">
+        <p class="exec-role" id="exec-role-2"></p>
+        <h3 class="exec-name" id="exec-name-2"></h3>
+      </div>
+    </div>
+
+    <button type="button" class="exec-slideshow-next" aria-label="Next">
+      <img src="./images/icons/icon-arrow-right.svg" alt="">
+    </button>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,1062 @@
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root {
+  --navy: #071C57;
+  --ink: #0B0D14;
+  --blue: #3B8EFE;
+  --blue-deep: #1749BF;
+  --purple: #5A32BE;
+  --gold: #d6b616;
+  --cream: #F6F4EF;
+  --white: #ffffff;
+  --muted: #555555;
+
+  --tint-blue: #3B8EFE50;
+
+  --radius-sm: 5px;
+  --radius-md: 1rem;
+  --radius-pill: 999px;
+
+  --ease: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   HEADER / NAV  (shared by every page)
+   ============================================================ */
+header {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Add .page-header on every header EXCEPT the homepage.
+   This is the single override that keeps inner-page headers short. */
+.page-header {
+  height: 45vh;
+  min-height: 24rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navy);
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav--glass {
+  background: rgba(7, 28, 87, 0.6);
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  transition: var(--ease);
+}
+
+.logo:hover {
+  scale: 1.025;
+  transition: var(--ease);
+}
+
+nav .logo {
+  height: 3rem;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  transition: var(--ease);
+}
+
+nav ul li a:hover {
+  color: var(--gold);
+  scale: 1.025;
+}
+
+nav ul li a b {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3rem;
+}
+
+nav button {
+  display: none;
+}
+
+/* MOBILE MENU — hidden off-screen at every screen width until .is-open is added */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 28, 87, 0.975);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+
+  transform: translateX(100%);
+  transition: var(--ease);
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu .mobile-menu-top {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu ul {
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+
+.mobile-menu ul li {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+/* Page-specific header background images.
+   Add ONE of these alongside .page-header (or .header-home on index.html). */
+.header-home,
+.header-executives,
+.header-families,
+.header-events,
+.header-archives,
+.header-contact {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-home .quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.header-home {
+  background-image:
+    linear-gradient(to bottom, rgba(7, 28, 87, 0.114) 0%, rgba(7, 28, 87, 0.95) 100%),
+    url(./images/pictures/cover.jpg);
+}
+
+.header-executives {
+  background-image:
+    linear-gradient(to bottom, rgba(7, 28, 87, 0.4) 0%, rgba(7, 28, 87, 0.9) 100%),
+    url(./images/pictures/excos.jpg);
+}
+
+.header-families {
+  background-image:
+    linear-gradient(to bottom, rgba(7, 28, 87, 0.4) 0%, rgba(7, 28, 87, 0.9) 100%),
+    url(./images/pictures/family.JPG);
+}
+
+.header-events {
+  background-image:
+    linear-gradient(to bottom, rgba(7, 28, 87, 0.4) 0%, rgba(7, 28, 87, 0.9) 100%),
+    url(./images/pictures/events.JPG);
+}
+
+.header-archives {
+  background-image:
+    linear-gradient(to bottom, rgba(7, 28, 87, 0.4) 0%, rgba(7, 28, 87, 0.9) 100%),
+    url(./images/pictures/archives2.jpg);
+}
+
+.header-contact {
+  background-image:
+    linear-gradient(to bottom, rgba(7, 28, 87, 0.4) 0%, rgba(7, 28, 87, 0.9) 100%),
+    url(./images/pictures/contact.jpg);
+}
+
+header p,
+header h1 {
+  text-align: center;
+  color: var(--white);
+  text-shadow: 0.25rem 0.25rem 0.5rem var(--ink);
+}
+
+header .breadcrumb {
+  font-size: 1rem;
+  text-transform: uppercase;
+  /* margin-top: 3.5rem; */
+  padding-top: 4rem;
+  letter-spacing: 2px;
+  text-shadow: 0.25rem 0.25rem 0.5rem var(--ink);
+}
+
+.page-header .breadcrumb {
+  /* margin-top: 2rem; */
+  padding-top: 2rem;
+}
+
+.page-header p {
+  width: 60%;
+  margin: 0 auto;
+  /* margin-top: 2rem; */
+  padding: 2rem;
+}
+
+.page-header p span {
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+header h1 {
+  margin-top: 2rem;
+  font-size: 5.5rem;
+  font-family: "Merriweather", serif;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+header p {
+  /* margin-top: 0.5rem; */
+  font-size: 1.3rem;
+}
+
+header .arrow-down {
+  display: flex;
+  justify-content: center;
+  height: 2.5rem;
+  margin-top: 2rem;
+
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ============================================================
+   BUTTONS  — put .btn + one modifier on ANY link/button, anywhere.
+   Covers: home quick-links, executive CTA links, event "View All".
+   ============================================================ */
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--ease);
+}
+
+.btn:hover {
+  scale: 1.05;
+}
+
+.btn--primary {
+  background-color: var(--gold);
+  color: var(--ink);
+}
+
+.btn--primary:hover {
+  background-color: var(--white);
+}
+
+.btn--outline-light {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.btn--outline-light:hover {
+  background-color: var(--white);
+  color: var(--ink);
+}
+
+.btn--outline-dark {
+  background-color: transparent;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn--outline-dark:hover {
+  background-color: var(--ink);
+  color: var(--white);
+}
+
+/* small pill link, e.g. "View All", "Download" */
+.btn--pill {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid var(--purple);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.9rem;
+  color: var(--purple);
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: var(--ease);
+}
+
+.btn--pill:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+/* text-only link with trailing emphasis, e.g. "Meet the other executives" */
+.btn--text {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: var(--ease);
+}
+
+.btn--text:hover {
+  color: var(--blue-deep);
+}
+
+/* circular icon button, e.g. the arrow-right / arrow-down icons */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: var(--ease);
+}
+
+.icon-btn img {
+  height: 1.2rem;
+}
+
+.icon-btn:hover {
+  background-color: var(--gold);
+  scale: 1.1;
+}
+
+/* ============================================================
+   EYEBROW — small uppercase label above a heading
+   ============================================================ */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SECTION HEADER — "Title" + link, side by side
+   ============================================================ */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-header h2,
+.section-header h3 {
+  font-family: "Merriweather", serif;
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+/* ============================================================
+   CARD + CARD-GRID — reused on executives, families, events, archives
+   ============================================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--cream);
+  border-radius: var(--radius-sm);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.card .role {
+  color: var(--blue-deep);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card p:not(.role):not(.event-date) {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* modifier: circular avatar photo — people (executives, families) */
+.card--avatar img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  background: var(--navy);
+}
+
+
+
+/* modifier: full-width rectangular photo, left-aligned text — events, archived sessions */
+.card--feature {
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+}
+
+.card--feature img {
+  width: 100%;
+  object-fit: cover;
+  background: var(--navy);
+}
+
+.card--feature video {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  background: var(--navy);
+}
+
+.card--feature .card-body {
+  padding: 1.5rem;
+}
+
+.card--feature h3,
+.card--feature h4 {
+  font-family: "Merriweather", serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+}
+
+.card--feature .event-date {
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* modifier: simple text-only utility card — archive outlines */
+.card--outline {
+  text-align: left;
+}
+
+.card--outline h4 {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+.superintendent-text p {
+  margin-bottom: .8rem;
+}
+
+/* ============================================================
+   CTA BANNER — the highlighted colour block used repeatedly:
+   home "Access Outlines", executives CTA, superintendent card,
+   contact info strip.
+   ============================================================ */
+.cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+
+.cta-banner h2,
+.cta-banner h3 {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.cta-banner p {
+  line-height: 1.5rem;
+}
+
+.cta-banner--deep {
+  background-color: var(--blue-deep);
+  color: var(--white);
+}
+
+.cta-banner--tint {
+  background-color: var(--tint-blue);
+  color: var(--ink);
+}
+
+.cta-banner--tint .eyebrow {
+  color: var(--blue-deep);
+}
+
+.cta-banner--photo {
+  align-items: center;
+}
+
+.cta-banner--photo img {
+  height: 12rem;
+  width: 12rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.cta-banner--photo .cta-text {
+  flex: 1;
+}
+
+/* ============================================================
+   PAGE SECTION — generic vertical rhythm wrapper.
+   Put this on every <section> in <main> so spacing stays consistent
+   without repeating padding rules per page.
+   ============================================================ */
+.page-section {
+  padding: 5rem;
+}
+
+.page-section--tight {
+  padding: 5rem 5rem 6rem;
+}
+
+.page-section--cream {
+  background-color: var(--cream);
+}
+
+.page-section--white {
+  background-color: var(--white);
+}
+
+/* ============================================================
+   HOME: about section (kept page-specific, not reused elsewhere)
+   ============================================================ */
+main .about .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+}
+
+main .about .container:first-child {
+  background-color: var(--navy);
+}
+
+main .about .container:nth-child(2) {
+  background-color: var(--cream);
+}
+
+main .about .container:last-child {
+  background-color: var(--ink);
+}
+
+main .about .container:first-child .about-text,
+main .about .container:last-child .about-text {
+  color: var(--white);
+}
+
+main .about .container:nth-child(2) .about-text {
+  color: var(--ink);
+}
+
+main .about .home-photo {
+  height: 30rem;
+  object-fit: cover;
+}
+
+main .about .about-text {
+  width: 50%;
+  padding: 0 2rem;
+}
+
+main .about h3 {
+  font-family: "Merriweather", serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+main .about p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+/* ============================================================
+   CONTACT FORM  (contact.html only)
+   ============================================================ */
+.contact-layout {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 15rem;
+}
+
+.contact-info .card {
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-info .card img {
+  height: 2rem;
+}
+
+.contact-form {
+  flex: 1.5;
+  min-width: 18rem;
+  background-color: var(--cream);
+  padding: 2.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.contact-form h3 {
+  font-family: "Merriweather", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+}
+
+.error-message {
+  color: #ff3333;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none;
+  /* Hidden until activated */
+}
+
+/* Optional styling to turn the input border red on error */
+.input-error {
+  border: 2px solid #ff3333 !important;
+}
+
+
+/* ============================================================
+   FOOTER (shared by every page)
+   ============================================================ */
+footer {
+  background-color: var(--navy);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 5rem 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+footer .logo {
+  height: 3rem;
+}
+
+footer p {
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+footer .instagram {
+  margin-top: 1rem;
+  height: 2rem;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+footer ul li.footer-heading {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.8rem;
+  transition: var(--ease);
+}
+
+footer ul li a:hover {
+  color: var(--gold);
+}
+
+.card a img {
+  transition: var(--ease);
+}
+
+.card a img:hover {
+  scale: 1.05;
+}
+
+
+.exec-slideshow {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(7, 28, 87, 0.92);
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.exec-slideshow.is-open {
+  display: flex;
+}
+
+.exec-slideshow-track {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.exec-slide {
+  text-align: center;
+  color: var(--white);
+}
+
+.exec-slide img {
+  width: 16rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin: 0 auto 1rem;
+}
+
+.exec-role {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+.exec-name {
+  font-family: "Merriweather", serif;
+  font-size: 1.6rem;
+  margin-top: 0.3rem;
+}
+
+.exec-slideshow-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.exec-slideshow-close img {
+  height: 1.5rem;
+}
+
+.exec-slideshow-prev {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.exec-slideshow-prev img {
+  height: 1.2rem;
+}
+
+.exec-slideshow-next {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.exec-slideshow-next img {
+  height: 1.2rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+
+  nav {
+    padding: 0.5rem 1rem;
+  }
+
+  nav button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+  }
+
+  .mobile-menu button {
+    background-color: transparent;
+    border: none;
+    width: 1rem;
+  }
+
+  .mobile-menu .mobile-menu-top a .logo {
+    width: 15rem;
+  }
+
+  .mobile-menu ul li a {
+    transition: var(--ease);
+  }
+
+  .mobile-menu ul li a:hover {
+    color: var(--gold);
+  }
+
+  header h1 {
+    font-size: 3.25rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+    width: 80%;
+    padding-top: 1rem;
+  }
+
+  main .about .container,
+  .cta-banner,
+  .contact-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  main .about .about-text {
+    width: 100%;
+  }
+
+  .page-section {
+    padding: 3rem 1.5rem;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav .icon-hamburger {
+    display: block;
+    height: 1.25rem;
+    cursor: pointer;
+  }
+
+  header .breadcrumb {
+    font-size: .8rem;
+  }
+
+  .header-home .quick-links {
+    flex-direction: column;
+    margin-top: 2.5rem;
+  }
+
+  .header-home .quick-links .btn {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  header .arrow-down {
+    margin-top: 1rem;
+  }
+
+  main .about .container {
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  main .about .home-photo {
+    height: 20rem;
+  }
+
+  main .about .container .about-text h3 {
+    font-size: 2.5rem;
+  }
+
+  main .about .container .about-text p {
+    text-align: center;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .section-header h2,
+  .section-header h3 {
+    font-size: 2rem;
+  }
+
+  .card--feature h4 {
+    margin: 0 auto;
+  }
+
+  .exec-slideshow,
+  .exec-slideshow-track {
+    gap: .5rem;
+  }
+
+  .exec-slide img,
+  .exec-role,
+  .exec-name,
+  .exec-slideshow-close,
+  .exec-slideshow-close img {
+    scale: .7;
+  }
+
+  .exec-slide img {
+    height: 15rem;
+
+  }
+
+  .exec-slide img,
+  .exec-name {
+    margin-bottom: 0;
+  }
+
+  footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  footer div {
+    margin: 0 auto;
+  }
+
+  footer ul {
+    width: auto;
+  }
+}

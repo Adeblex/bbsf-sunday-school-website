@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact the Sunday School Family for inquiries and more information.">
+  <title>Contact | Sunday School Family</title>
+
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="script.js" defer></script>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a href="./index.html">
+        <img class='logo' src="./images/logos/white-withStraightText-final.png" alt="Sunday School Family logo">
+      </a>
+    </div>
+
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./executives.html">Executives</a></li>
+      <li><a href="./families.html">Families</a></li>
+      <li><a href="./events.html">Events</a></li>
+      <li><a href="./archives.html">Archives</a></li>
+      <li><a href="./contact.html"><b>Contact</b></a></li>
+    </ul>
+
+    <button type="button" aria-label="Open menu">
+      <img class="icon-hamburger" src="./images/icons/icon-hamburger.svg" alt="">
+    </button>
+  </nav>
+  <header class="page-header header-contact">
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-top">
+        <a href="./index.html">
+          <img class='logo' src="./images/logos/white-withStraightText-final.png" alt="Sunday School Family logo">
+        </a>
+
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">
+          <img class="icon-close" src="./images/icons/icon-close.svg" alt="">
+        </button>
+      </div>
+
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./executives.html">Executives</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./events.html">Events</a></li>
+        <li><a href="./archives.html">Archives</a></li>
+        <li><a href="./contact.html"><b>Contact</b></a></li>
+      </ul>
+    </div>
+
+    <p class="breadcrumb">Home/<span>Contact us</span></p>
+    <h1>Get In Touch</h1>
+    <p>We'd love to hear from you! Reach out to us with any questions or feedback.</p>
+  </header>
+
+  <main>
+    <section class="page-section page-section--white">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="card">
+            <img src="./images/icons/icons8-email-96.png" alt="email-icon">
+            <div>
+              <h5>Email Us</h5>
+              <p>busundayschool@gmail.com</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/icons/icons8-location-96.png" alt="location-icon">
+            <div>
+              <h5>Visit Us</h5>
+              <p>Bowen University, Iwo, Osun State, Nigeria</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/icons/icons8-phone-96.png" alt="phone-icon">
+            <div>
+              <h5>Call Us</h5>
+              <p>+234 707 121 4492</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" novalidate>
+          <h3>Send a Message</h3>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <span class="error-message" id="name-error"></span>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+          <span class="error-message" id="email-error"></span>
+
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" required>
+          <span class="error-message" id="subject-error"></span>
+
+          <label for="message">Message</label>
+          <textarea name="message" id="message" required></textarea>
+          <span class="error-message" id="message-error"></span>
+
+          <button class="btn btn--primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="./index.html">
+        <img class='logo' src="./images/logos/white-withStraightText-final.png" alt="Sunday School Family logo">
+      </a>
+      <p>Bowen University Baptist Student Fellowship</p>
+      <a href="https://www.instagram.com/bu_sundayschool/" target="_blank" rel="noopener noreferrer"><img
+          class='instagram' src="./images/icons/icon-instagram.svg" alt="Sunday School Family logo"></a>
+    </div>
+
+    <ul>
+      <li class="footer-heading">Explore</li>
+      <li><a href="./executives.html">Executives</a></li>
+      <li><a href="./families.html">Families</a></li>
+      <li><a href="./events.html">Events</a></li>
+      <li><a href="./archives.html">Archives</a></li>
+    </ul>
+
+    <ul>
+      <li class="footer-heading">Get in touch</li>
+      <li><a href="./contact.html">Contact us</a></li>
+      <li><a href="#">busundayschool@gmail.com</a></li>
+    </ul>
+
+    <ul>
+      <li class="footer-heading">Address</li>
+      <li>Bowen University</li>
+      <li>Iwo, Osun State</li>
+      <li>Nigeria</li>
+    </ul>
+
+    <p>© 2026 BBSF Sunday School Family Bowen University. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
